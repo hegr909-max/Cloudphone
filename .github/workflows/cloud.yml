@@ -1,0 +1,15 @@
+name: Cloud Server
+
+on:
+  workflow_dispatch:
+
+jobs:
+  server:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start Cloud
+        run: |
+          echo "Cloud server started"
+          echo "Running for some hours..."
+          sleep 21600
