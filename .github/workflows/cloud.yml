@@ -1,15 +1,18 @@
-name: Cloud Server
+name: Cloud PC
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
-  server:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Start Cloud
+      - name: Install Desktop
         run: |
-          echo "Cloud server started"
-          echo "Running for some hours..."
+          sudo apt update
+          sudo apt install xfce4 xfce4-goodies -y
+
+      - name: Keep Server Running
+        run: |
+          echo "Cloud PC running"
           sleep 21600
